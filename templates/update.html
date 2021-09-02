@@ -4,7 +4,7 @@
 <body>
 {% block content %}
     <form method="post">
-        <h3><u>Updating "Row-{{ object.id }}"</u></h3><br>
+        <h3><u>Updating Row</u></h3><br>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Update" style="background: lightskyblue">

@@ -6,7 +6,7 @@
 <div class="pt-lg-2 pb-lg-5">
     <form method="post">
         {% csrf_token %}
-        <h2 style="color: red">DO you want to delete "row no-{{ object.id }}"</h2><br>
+        <h2 style="color: red">DO you want to delete this row?"</h2><br>
         <table border="2" cellpadding="10">
             <tr>
                 <td>{{ object.date }}</td>
