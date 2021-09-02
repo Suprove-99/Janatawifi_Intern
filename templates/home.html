@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+{% block content %}
+    <div>
+        <div>
+            <h2 style="text-align: center; display: inline">Stock Market Data</h2>
+        </div>
+
+        <table border="1" cellspacing="10" cellpadding="10" style="margin-left: auto;margin-right: auto; width: 100%">
+            <tr bgcolor="#90ee90">
+                <td>Serial no.</td>
+                <td>Date</td>
+                <td>Trade_code</td>
+                <td>High</td>
+                <td>Low</td>
+                <td>Open</td>
+                <td>Close</td>
+                <td>Volume</td>
+            </tr>
+            {% for k in object_list %}
+                <tr>
+                <td>{{ k.id }}</td>
+                <td>{{ k.date }}</td>
+                <td>{{ k.trade_code }}</td>
+                <td>{{ k.high }}</td>
+                <td>{{ k.low }}</td>
+                <td>{{ k.open }}</td>
+                <td>{{ k.close }}</td>
+                <td>{{ k.volume }}</td>
+
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+</body>
+</html>
