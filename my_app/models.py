@@ -12,5 +12,11 @@ class MyModel(models.Model):
     close = models.FloatField()
     volume = models.CharField(max_length=255)
 
+    # ordering data by date in reverse order(last shows first)
+    class Meta:
+        ordering = ['-date']
+
     def get_absolute_url(self):
         return reverse('home_')
+
+

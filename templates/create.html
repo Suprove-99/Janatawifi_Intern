@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<html>
+<head><title>Create</title></head>
+<body>
+{% block content %}
+    <div>
+        <form method="post" >
+            <h2><u>Create New Row</u></h2>
+            <p>Row will be added at the bottom of the table</p>
+            <br>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create" style="background: lightgreen">
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

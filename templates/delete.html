@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<html>
+<head><title>delete</title></head>
+<body>
+{% block content %}
+<div class="pt-lg-2 pb-lg-5">
+    <form method="post">
+        {% csrf_token %}
+        <h2 style="color: red">DO you want to delete "row no-{{ object.id }}"</h2><br>
+        <table border="2" cellpadding="10">
+            <tr>
+                <td>{{ object.date }}</td>
+                <td>{{ object.trade_code }}</td>
+                <td>{{ object.high }}</td>
+                <td> {{ object.low }} </td>
+                <td> {{ object.open }}</td>
+                <td>{{ object.close }}</td>
+                <td>{{ object.volume }}</td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Delete" style="background: lightcoral">
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -10,11 +10,14 @@
     <div>
         <div>
             <h2 style="text-align: center; display: inline">Stock Market Data</h2>
+            <!-- Create button-->
+            <a href="{% url 'create_' %}" style="float: right">
+                <button style="display: inline ;background: lightyellow;">Add New Data</button>
+            </a>
         </div>
 
         <table border="1" cellspacing="10" cellpadding="10" style="margin-left: auto;margin-right: auto; width: 100%">
             <tr bgcolor="#90ee90">
-                <td>Serial no.</td>
                 <td>Date</td>
                 <td>Trade_code</td>
                 <td>High</td>
@@ -22,10 +25,10 @@
                 <td>Open</td>
                 <td>Close</td>
                 <td>Volume</td>
+                <td>Operations</td> <!--update,Delete-->
             </tr>
             {% for k in object_list %}
                 <tr>
-                <td>{{ k.id }}</td>
                 <td>{{ k.date }}</td>
                 <td>{{ k.trade_code }}</td>
                 <td>{{ k.high }}</td>
@@ -33,6 +36,15 @@
                 <td>{{ k.open }}</td>
                 <td>{{ k.close }}</td>
                 <td>{{ k.volume }}</td>
+                <!--update,Delete-->
+                <td>
+                    <a href="{% url 'update_' k.pk %}">
+                        <button style="background: lightskyblue">Update</button>
+                    </a>
+                    <a href="{% url 'delete_' k.pk %}">
+                        <button style="background: lightcoral">Delete</button>
+                    </a>
+                </td>
 
             {% endfor %}
         </table>
